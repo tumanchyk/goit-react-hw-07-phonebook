@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Label, Input } from "./Filter.styled";
 import { setValue } from "redux/filterSlice.js";
-
+import { getFilter } from "redux/selectors";
 export default function Filter(){
-    const filter = useSelector (state => state.filter);
+    const filter = useSelector (getFilter);
     const dispatch = useDispatch();
     return (
         <Label>

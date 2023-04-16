@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { nanoid } from 'nanoid';
 import { addContact } from "redux/contacts/contactOperations";
-// import { addContact } from "redux/contacts/concactSlice.js";
+import { getContactList } from "redux/selectors";
 import { Formik} from 'formik';
 import { FormEl, Label, Input, Button, ErrorMessage } from "./Form.styled";
 import * as yup from 'yup';
@@ -19,7 +19,7 @@ const initialValues = {
 }
 
 export default function ContactForm(){
-    const contacts = useSelector (state => state.contacts.list)
+    const contacts = useSelector (getContactList)
     const dispatch = useDispatch();
   
     const onFormSubmit = ( contact ) =>{

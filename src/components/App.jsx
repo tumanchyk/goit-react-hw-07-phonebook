@@ -7,10 +7,11 @@ import  ContactForm  from "./Form/ContactForm";
 import ContactList from "./ContactsList/ContactsList.jsx";
 import Filter from "./Filter/Filter.jsx";
 import { Loader } from "./Loader/Loader.js";
+import { getIsLoading } from "redux/selectors.js";
 
 export function App (){
   const dispatch = useDispatch();
-  const isLoading = useSelector(state => state.contacts.isLoading);
+  const isLoading = useSelector(getIsLoading);
 
   useEffect(() =>{ 
     dispatch(fetchContacts())
